@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #cfe4e1; color: #10302b; font-family: "Noto Sans JP", system-ui, sans-serif; font-size: 16px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: #07736b; }
+a:hover { color: #10302b; }
+* { box-sizing: border-box; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid #07736b; outline-offset: 2px; }
+input:focus, select:focus { border-color: #07736b !important; }
+.sel { width: 100%; font: inherit; font-size: 15.5px; font-weight: 500; padding: 14px 40px 14px 16px; border: 1px solid rgba(0,0,0,0.16); background-color: #f4fbfa; color: #10302b; cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23a33f12' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; border-radius: 4px; }
+.sel:invalid { color: #6d8d89; }
+</style>
+</helmet>
+<div style="max-width:430px;margin:0 auto;background:#fbfefd;min-height:100vh;box-shadow:0 0 34px rgba(0,0,0,0.18)">
+
+  <header style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fbfefd;border-bottom:1px solid #cfe4e1">
+    <a href="W-LP.dc.html" style="display:block;text-decoration:none"><img src="assets/logo-w-gold.png" alt="W" style="height:24px;width:auto;display:block"></a>
+    <div style="font-size:11.5px;line-height:1.6;color:#53706c;font-weight:500">粗利600万円保証付きの<br>営業支援サービス</div>
+  </header>
+
+  <div style="background:url(data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27560%27%20height=%27420%27%20viewBox=%270%200%20560%20420%27%3E%3Cg%20fill=%27none%27%20stroke-width=%271.5%27%3E%3Ccircle%20cx=%27205%27%20cy=%27210%27%20r=%27158%27%20stroke=%27%233b3228%27%20opacity=%270.10%27/%3E%3Ccircle%20cx=%27355%27%20cy=%27210%27%20r=%27158%27%20stroke=%27%23a3853f%27%20opacity=%270.13%27/%3E%3C/g%3E%3Cg%20fill=%27none%27%20stroke-width=%271%27%3E%3Ccircle%20cx=%27205%27%20cy=%27210%27%20r=%27108%27%20stroke=%27%233b3228%27%20opacity=%270.06%27/%3E%3Ccircle%20cx=%27355%27%20cy=%27210%27%20r=%27108%27%20stroke=%27%23a3853f%27%20opacity=%270.08%27/%3E%3C/g%3E%3Ccircle%20cx=%27280%27%20cy=%27210%27%20r=%275%27%20fill=%27%23a3853f%27%20opacity=%270.16%27/%3E%3C/svg%3E) right -180px top -40px/560px 420px no-repeat, radial-gradient(ellipse 430px 310px at 88% -8%,rgba(87,195,184,0.13),transparent 70%), #fbfefd;padding:40px 24px 44px">
+    <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px">
+      <span style="width:20px;height:2px;background:linear-gradient(90deg,#a33f12,rgba(87,195,184,0));flex:none"></span>
+      <span style="font-size:11.5px;font-weight:900;letter-spacing:0.2em;color:#07736b">資料ダウンロード</span>
+    </div>
+    <h1 style="font-size:25px;line-height:1.65;margin:0;font-weight:900;color:#10302b;letter-spacing:0.02em"><span style="background:linear-gradient(90deg,#a33f12,#c2571f);background-size:100% 2px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:5px">無料で資料</span>を<br>ダウンロード</h1>
+    <p style="font-size:14.5px;line-height:2.05;color:#38534f;margin:18px 0 0">サービス内容・審査基準・保証の適用条件をまとめた資料をお送りします。1営業日以内に担当よりご連絡します。</p>
+  </div>
+
+  <div style="padding:34px 24px 48px;background:#fbfefd">
+    <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:22px">
+      <div>
+        <label for="company" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">会社名<span style="background:#07736b;color:#fbfefd;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px">必須</span></label>
+        <input id="company" name="company" type="text" required placeholder="例：ラフ・メイカー株式会社" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+      </div>
+      <div>
+        <label for="name" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">氏名<span style="background:#07736b;color:#fbfefd;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px">必須</span></label>
+        <input id="name" name="name" type="text" required placeholder="例：山田 太郎" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+      </div>
+      <div>
+        <label for="email" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">メールアドレス<span style="background:#07736b;color:#fbfefd;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px">必須</span></label>
+        <input id="email" name="email" type="email" required placeholder="例：yamada@example.co.jp" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+      </div>
+      <div>
+        <label for="tel" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">電話番号<span style="background:#07736b;color:#fbfefd;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px">必須</span></label>
+        <input id="tel" name="tel" type="tel" required placeholder="例：03-1234-5678" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+      </div>
+      <div>
+        <label for="budget" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">予算として年間300万円以上を確保できますか？<span style="background:#07736b;color:#fbfefd;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+        <select id="budget" name="budget" required class="sel">
+          <option value="" disabled selected>選択してください</option>
+          <option>はい</option>
+          <option>いいえ</option>
+        </select>
+        <p style="font-size:12.5px;line-height:1.8;color:#07736b;margin:8px 0 0">※誠に恐縮ながら、「いいえ」の場合は今回のご案内の対象外となります</p>
+      </div>
+      <div>
+        <label for="issue" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">現在、貴社が抱えている課題を教えてください<span style="background:#07736b;color:#fbfefd;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+        <select id="issue" name="issue" required class="sel">
+          <option value="" disabled selected>選択してください</option>
+          <option>売上が伸び悩んでいる／頭打ちになっている</option>
+          <option>新規顧客・販路をうまく開拓できていない</option>
+          <option>営業の人材・リソースが不足している</option>
+          <option>マーケティング・ブランディングのやり方が分からない</option>
+          <option>決裁者・キーマンとの人脈・つながりがない</option>
+          <option>資金調達・PR・採用・DXなど経営全般に課題がある</option>
+        </select>
+      </div>
+      <div>
+        <label for="interest" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">今回、特に興味を持たれた内容を教えてください<span style="background:#07736b;color:#fbfefd;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+        <select id="interest" name="interest" required class="sel">
+          <option value="" disabled selected>選択してください</option>
+          <option>ニーズを確認済みの決裁者とのマッチング・紹介</option>
+          <option>代表・田口のマーケティングスキルを活用できる点</option>
+          <option>企業800社・15年で築いた18,000社の人脈</option>
+          <option>ターゲットへのアプローチ代行</option>
+          <option>資金調達・PR・人材・DXまで含む経営ブレインサポート</option>
+          <option>粗利600万円の最低保証（下振れリスクの固定）</option>
+        </select>
+      </div>
+      <div style="font-size:12.5px;line-height:1.9;color:#53706c;background:#eff8f6;border:1px solid #cfe4e1;padding:14px 16px">
+        送信いただいた情報は、お問い合わせ対応の目的にのみ使用します。詳しくは<a href="https://drive.google.com/file/d/1aoLPsLe9loWZZIPutqbFUnU6kxRVnT5W/view?usp=sharing" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認ください。
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:10px">
+          <span style="width:2px;height:16px;background:#07736b;transform:rotate(-20deg);border-radius:1px;flex:none"></span>
+          <span style="font-size:13px;font-weight:900;color:#07736b;letter-spacing:0.06em;white-space:nowrap">30秒で入力完了</span>
+          <span style="width:2px;height:16px;background:#07736b;transform:rotate(20deg);border-radius:1px;flex:none"></span>
+        </div>
+        <button type="submit" style="font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#c2571f 0%,#a33f12 100%);color:#fbfefd;font-weight:900;font-size:17px;padding:18px 14px;border:none;border-radius:9999px;cursor:pointer;line-height:1.5;box-shadow:0 4px 0 #7a2c0b, 0 8px 20px rgba(163,63,18,0.30)" style-hover="filter:brightness(1.1)">
+          <span>この内容で資料を受け取る</span>
+          <span style="flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;font-size:14.5px;line-height:1">&#8594;</span>
+        </button>
+      </div>
+    </form>
+    <div style="text-align:center;margin-top:28px">
+      <a href="W-LP.dc.html" style="font-size:13px;color:#53706c">← LPに戻る</a>
+    </div>
+  </div>
+
+  <footer style="padding:24px;background:#0a221e;font-size:11.5px;color:#6d8d89;text-align:center">© ラフ・メイカー株式会社</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      handleSubmit: (e) => {
+        e.preventDefault();
+        if (e.target.checkValidity()) location.href = 'W-Thanks.dc.html';
+        else e.target.reportValidity();
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #cfe4e1; color: #10302b; font-family: "Noto Sans JP", system-ui, sans-serif; font-size: 16px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: #1d7a72; }
+a:hover { color: #10302b; }
+* { box-sizing: border-box; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { * { animation:none !important; } }
+details summary::-webkit-details-marker { display: none; }
+details summary { list-style: none; }
+details.faq summary { position: relative; padding-right: 32px; }
+details.faq summary::after { content: "\FF0B"; position: absolute; right: 0; top: 19px; font-size: 17px; font-weight: 800; color: #28968d; line-height: 1; }
+details.faq[open] summary::after { content: "\FF0D"; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid #1d7a72; outline-offset: 2px; }
+section[id] { scroll-margin-top: 72px; }
+.sel { width: 100%; font: inherit; font-size: 16px; font-weight: 500; padding: 14px 40px 14px 16px; border: 1px solid rgba(0,0,0,0.16); background-color: #f4fbfa; color: #10302b; cursor: pointer; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231d7a72' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; border-radius: 4px; }
+.sel:invalid { color: #6d8d89; }
+.hscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; scroll-snap-type: x mandatory; }
+.hscroll::-webkit-scrollbar { display: none; }
+</style>
+</helmet>
+<div style="max-width:430px;margin:0 auto;background:#fbfefd;padding-bottom:104px;box-shadow:0 0 34px rgba(16,48,43,0.18)">
+  <header style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(180deg,#fbfefd 0%,#f4fbfa 100%);position:sticky;top:0;z-index:20;border-bottom:1px solid #cfe4e1">
+    <img src="assets/logo-w-gold.png" alt="W" style="height:24px;width:auto;display:block">
+    <div style="font-size:11.5px;line-height:1.6;color:#53706c;flex:1;font-weight:500">粗利600万円保証付きの<br>営業支援サービス</div>
+    <details id="menu" style="position:relative;flex:none">
+      <summary aria-label="メニュー" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:40px;cursor:pointer;border:1px solid #c2dbd7;border-radius:6px;background:linear-gradient(180deg,#fbfefd,#eff8f6);box-shadow:0 2px 6px rgba(16,48,43,0.08)">
+        <span style="width:20px;height:2px;background:#10302b;display:block;border-radius:1px"></span>
+        <span style="width:20px;height:2px;background:#10302b;display:block;border-radius:1px"></span>
+        <span style="width:20px;height:2px;background:#10302b;display:block;border-radius:1px"></span>
+      </summary>
+      <div style="position:absolute;right:0;top:50px;width:232px;background:#fbfefd;border:1px solid #cfe4e1;box-shadow:0 16px 38px rgba(16,48,43,0.22);z-index:40;overflow:hidden">
+        <a href="#kaiketsu" style="display:block;padding:13px 16px;font-size:14.5px;font-weight:700;color:#10302b;text-decoration:none;border-bottom:1px solid #e4f2f0">実績</a>
+        <a href="#service" style="display:block;padding:13px 16px;font-size:14.5px;font-weight:700;color:#10302b;text-decoration:none;border-bottom:1px solid #e4f2f0">サービス内容</a>
+        <a href="#riyu" style="display:block;padding:13px 16px;font-size:14.5px;font-weight:700;color:#10302b;text-decoration:none;border-bottom:1px solid #e4f2f0">保証できる理由</a>
+        <a href="#gyoshu" style="display:block;padding:13px 16px;font-size:14.5px;font-weight:700;color:#10302b;text-decoration:none;border-bottom:1px solid #e4f2f0">対象商材</a>
+        <a href="#faq" style="display:block;padding:13px 16px;font-size:14.5px;font-weight:700;color:#10302b;text-decoration:none;border-bottom:1px solid #e4f2f0">よくあるご質問</a>
+        <div style="padding:12px">
+          <a href="#contact" style="display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,#c2571f 0%,#a33f12 100%);color:#fbfefd;font-weight:900;font-size:14.5px;padding:13px 10px;border-radius:6px;text-decoration:none;line-height:1.4;box-shadow:0 4px 0 #7a2c0b, 0 8px 20px rgba(163,63,18,0.30)" style-hover="filter:brightness(1.1);color:#fbfefd">
+            <span>無料で資料をもらう</span>
+            <span style="flex:none;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;font-size:12.5px;line-height:1">&#8594;</span>
+          </a>
+        </div>
+      </div>
+    </details>
+  </header>
+  <section id="fv" data-screen-label="ファーストビュー" style="background:#28968d;padding:34px 22px 30px;color:#ffffff;text-align:center">
+    <p style="font-size:clamp(15px,4.4vw,18.5px);font-weight:900;color:#ffffff;line-height:1.55;margin:0 0 10px;letter-spacing:0.02em">BtoB向け営業支援・新規開拓に<br>課題を抱える企業様へ</p>
+    <h1 style="font-size:clamp(31px,9.8vw,44px);line-height:1.16;letter-spacing:-0.01em;margin:0 0 16px;font-weight:900;color:#ffffff">18,000社から<br>決裁者をご紹介</h1>
+    <div style="display:flex;align-items:center;justify-content:center;gap:4px;margin:0 0 20px">
+      <span style="position:relative;writing-mode:vertical-rl;background:#17605a;color:#ffffff;font-size:12.5px;font-weight:900;letter-spacing:0.14em;padding:11px 6px;line-height:1;flex:none">月間商談数<span style="position:absolute;right:-9px;top:50%;transform:translateY(-50%);width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:9px solid #17605a;display:block"></span></span>
+      <span style="display:flex;align-items:baseline;gap:1px;color:#ffffff;margin-left:8px">
+        <span style="font-size:clamp(23px,7vw,31px);font-weight:900">約</span>
+        <span style="font-size:clamp(52px,16.5vw,74px);font-weight:900;line-height:1;letter-spacing:-0.02em">4〜5</span>
+        <span style="font-size:clamp(23px,7vw,31px);font-weight:900">件</span>
+      </span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;margin:0 0 22px">
+      <img src="assets/emblem-600-white.png" alt="粗利保証 600万円" style="width:100%;max-width:170px;height:auto;display:block;margin:0 auto">
+      <img src="assets/emblem-800-white.png" alt="導入企業 800社" style="width:100%;max-width:165px;height:auto;display:block;margin:0 auto">
+    </div>
+<div><div style="display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:10px"><span style="width:2px;height:16px;background:#ffffff;transform:rotate(-20deg);border-radius:1px;flex:none"></span><span style="font-size:13px;font-weight:900;color:#ffffff;letter-spacing:0.06em;white-space:nowrap">30秒で完了</span><span style="width:2px;height:16px;background:#ffffff;transform:rotate(20deg);border-radius:1px;flex:none"></span></div><a href="#contact" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#c2571f 0%,#a33f12 100%);color:#fbfefd;font-weight:900;font-size:18px;padding:19px 14px;border-radius:9999px;text-decoration:none;line-height:1.5;letter-spacing:0.02em;box-shadow:0 4px 0 #7a2c0b, 0 8px 20px rgba(163,63,18,0.30)" style-hover="filter:brightness(1.1);color:#fbfefd"><span>無料で資料をダウンロード</span><span style="flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;font-size:14.5px;line-height:1">&#8594;</span></a></div>
+    <p style="font-size:12.5px;color:#ffffff;margin:12px 0 0;text-align:center">ご相談・審査まで費用は一切かかりません</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;margin:20px 0 0;opacity:0.85">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block"><path d="M5 8l7 7 7-7"/><path d="M5 13l7 7 7-7"/></svg>
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.22em;color:#ffffff">Scroll</span>
+    </div>
+  </section>
+  <section data-screen-label="こんなお悩み" style="background:#e6f2f0;padding:46px 24px 54px;border-top:1px solid #cfe4e1">
+    <h2 style="text-align:center;font-size:21px;line-height:1.75;margin:0 0 30px;font-weight:900;color:#10302b;letter-spacing:0.01em">BtoBの新規開拓において<br>こんな<span style="background:linear-gradient(90deg,#28968d,#28968d);background-size:100% 2px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:4px">「お悩み」</span>ありませんか？</h2>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;justify-content:flex-end"><div style="position:relative;max-width:86%;background:#66a7a1;border-radius:10px;padding:13px 18px;box-shadow:0 4px 12px rgba(16,48,43,0.14)"><span style="font-size:14px;font-weight:700;line-height:1.7;color:#fbfefd">アポ単価3万円を払っても<br>商談の質が低い</span><span style="position:absolute;right:18px;bottom:-9px;width:9px;height:9px;border-radius:50%;background:#66a7a1;display:block"></span><span style="position:absolute;right:6px;bottom:-19px;width:6px;height:6px;border-radius:50%;background:#66a7a1;display:block"></span></div></div>
+      <div style="display:flex;justify-content:flex-start"><div style="position:relative;max-width:86%;background:#14403a;border-radius:10px;padding:13px 18px;box-shadow:0 4px 12px rgba(16,48,43,0.14)"><span style="font-size:14px;font-weight:700;line-height:1.7;color:#fbfefd">スピード感をもって<br>決裁者に会いたい</span><span style="position:absolute;left:18px;bottom:-9px;width:9px;height:9px;border-radius:50%;background:#14403a;display:block"></span><span style="position:absolute;left:6px;bottom:-19px;width:6px;height:6px;border-radius:50%;background:#14403a;display:block"></span></div></div>
+      <div style="display:flex;justify-content:flex-end"><div style="position:relative;max-width:86%;background:#66a7a1;border-radius:10px;padding:13px 18px;box-shadow:0 4px 12px rgba(16,48,43,0.14)"><span style="font-size:14px;font-weight:700;line-height:1.7;color:#fbfefd">発注ニーズのある<br>決裁者にたどり着けない</span><span style="position:absolute;right:18px;bottom:-9px;width:9px;height:9px;border-radius:50%;background:#66a7a1;display:block"></span><span style="position:absolute;right:6px;bottom:-19px;width:6px;height:6px;border-radius:50%;background:#66a7a1;display:block"></span></div></div>
+      <div style="display:flex;justify-content:flex-start"><div style="position:relative;max-width:86%;background:#14403a;border-radius:10px;padding:13px 18px;box-shadow:0 4px 12px rgba(16,48,43,0.14)"><span style="font-size:14px;font-weight:700;line-height:1.7;color:#fbfefd">テレアポの成果が<br>落ち続けている</span><span style="position:absolute;left:18px;bottom:-9px;width:9px;height:9px;border-radius:50%;background:#14403a;display:block"></span><span style="position:absolute;left:6px;bottom:-19px;width:6px;height:6px;border-radius:50%;background:#14403a;display:block"></span></div></div>
+      <div style="display:flex;justify-content:flex-end"><div style="position:relative;max-width:86%;background:#66a7a1;border-radius:10px;padding:13px 18px;box-shadow:0 4px 12px rgba(16,48,43,0.14)"><span style="font-size:14px;font-weight:700;line-height:1.7;color:#fbfefd">成果保証がなく<br>投資が丸ごと損失になる</span><span style="position:absolute;right:18px;bottom:-9px;width:9px;height:9px;border-radius:50%;background:#66a7a1;display:block"></span><span style="position:absolute;right:6px;bottom:-19px;width:6px;height:6px;border-radius:50%;background:#66a7a1;display:block"></span></div></div>
+      <div style="display:flex;justify-content:flex-start"><div style="position:relative;max-width:86%;background:#14403a;border-radius:10px;padding:13px 18px;box-shadow:0 4px 12px rgba(16,48,43,0.14)"><span style="font-size:14px;font-weight:700;line-height:1.7;color:#fbfefd">決裁者と話せないまま<br>失注してしまう</span><span style="position:absolute;left:18px;bottom:-9px;width:9px;height:9px;border-radius:50%;background:#14403a;display:block"></span><span style="position:absolute;left:6px;bottom:-19px;width:6px;height:6px;border-radius:50%;background:#14403a;display:block"></span></div></div>
+    </div>
+  </section>
+  <section id="kaiketsu" data-screen-label="Wの答え" style="position:relative;overflow:hidden;background:linear-gradient(118deg,rgba(255,255,255,0.85) 0 34%,rgba(255,255,255,0) 34% 41%,rgba(255,255,255,0.5) 41% 58%,rgba(255,255,255,0) 58%),linear-gradient(180deg,#fbfefd 0%,#edf8f6 38%,#d9edea 72%,#c9e5e1 100%);padding:46px 0 50px;border-top:1px solid #b0d7d1">
+    <div style="padding:0 24px;text-align:center">
+      <h2 style="font-size:22px;line-height:1.7;margin:0 0 18px;font-weight:900;color:#10302b;letter-spacing:0.01em"><img src="assets/logo-w-gold.png" alt="W" style="height:23px;width:auto;display:inline-block;vertical-align:-3px">に依頼すれば<span style="background:linear-gradient(90deg,#28968d,#28968d);background-size:100% 2px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:5px">すべて解決</span>！</h2>
+      <div style="display:flex;justify-content:center;margin-bottom:18px"><span style="position:relative;display:inline-block;background:#fbfefd;border:1px solid #c2dbd7;border-radius:6px;padding:12px 22px;font-size:15px;font-weight:900;color:#10302b;letter-spacing:0.02em;box-shadow:0 4px 14px rgba(0,0,0,0.09)">粗利600万円 伴走保証付きで<span style="position:absolute;left:50%;bottom:-7px;width:12px;height:12px;background:#fbfefd;border-right:1px solid #c2dbd7;border-bottom:1px solid #c2dbd7;transform:translateX(-50%) rotate(45deg);display:block"></span></span></div>
+      <h3 style="font-size:22px;line-height:1.7;margin:0 0 14px;font-weight:900;color:#10302b">18,000社の企業から<br>ニーズのある決裁者をご紹介</h3>
+      <p style="font-size:15.5px;line-height:1.95;color:#38534f;margin:0 0 6px">15年で構築した決裁者ネットワークから、<br>あなたの商材が合致する企業をお繋ぎします。</p>
+      <div style="background:#fbfefd;border:1px solid #cfe4e1;border-top:3px solid #28968d;box-shadow:0 4px 16px rgba(16,48,43,0.10);padding:20px 18px;margin:22px 0 4px"><div style="font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin-bottom:8px">ご紹介する商談の本数</div><div style="display:flex;align-items:baseline;justify-content:center;gap:3px;color:#10302b;margin-bottom:4px"><span style="font-size:16px;font-weight:900">月に</span><span style="font-size:44px;font-weight:900;line-height:1.05;letter-spacing:-0.01em;color:#28968d">4〜5</span><span style="font-size:18px;font-weight:900">件</span></div><div style="font-size:12.5px;color:#53706c;line-height:1.8">年間平均。1年でおよそ50〜60件の商談になります。</div></div>
+      <div style="display:flex;justify-content:center;margin:28px 0 8px">
+        <div style="position:relative;display:inline-flex;align-items:center;gap:12px;color:#fbfefd;padding:11px 22px;background:repeating-linear-gradient(115deg,rgba(255,255,255,0.07) 0 3px,rgba(255,255,255,0) 3px 11px),linear-gradient(135deg,#1d7a72 0%,#17605a 100%);box-shadow:0 5px 14px rgba(16,48,43,0.28)"><span style="font-size:15px;font-weight:900;opacity:0.65">&#65340;</span><span style="font-size:15px;font-weight:900;letter-spacing:0.06em;white-space:nowrap">実際のお客様の課題</span><span style="font-size:15px;font-weight:900;opacity:0.65">&#65295;</span></div>
+      </div>
+      <div style="font-size:11.5px;color:#6d8d89;text-align:center;margin:0 0 14px">→ 横にスワイプしてご覧いただけます</div>
+      <div class="hscroll" style="display:flex;gap:12px;padding:4px 24px 14px;margin:0 -24px;text-align:left;align-items:stretch">
+        <div style="flex:none;width:262px;scroll-snap-align:start;background:#fbfefd;border:1px solid #cfe4e1;border-radius:10px;box-shadow:0 4px 14px rgba(16,48,43,0.10);padding:20px 16px 18px;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:center;margin-bottom:11px"><img src="assets/person/man_01.jpg" alt="" style="width:84px;height:84px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 3px 10px rgba(16,48,43,0.18)"></div>
+          <div style="text-align:center;font-size:11.5px;font-weight:700;color:#6d8d89;margin-bottom:3px">代表取締役</div>
+          <div style="text-align:center;font-size:15px;font-weight:900;color:#1d7a72;line-height:1.6;margin-bottom:14px">メーカー</div>
+          <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:3px;padding:5px 0;text-align:center;font-size:11.5px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 11px">ご相談時の課題</div>
+          <p style="font-size:14px;font-weight:700;line-height:1.95;color:#10302b;margin:0">「大手企業の新規開拓を進めたいが、そもそも接点がない」</p>
+        </div>
+        <div style="flex:none;width:262px;scroll-snap-align:start;background:#fbfefd;border:1px solid #cfe4e1;border-radius:10px;box-shadow:0 4px 14px rgba(16,48,43,0.10);padding:20px 16px 18px;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:center;margin-bottom:11px"><img src="assets/person/man_02.jpg" alt="" style="width:84px;height:84px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 3px 10px rgba(16,48,43,0.18)"></div>
+          <div style="text-align:center;font-size:11.5px;font-weight:700;color:#6d8d89;margin-bottom:3px">代表取締役</div>
+          <div style="text-align:center;font-size:15px;font-weight:900;color:#1d7a72;line-height:1.6;margin-bottom:14px">SaaS企業</div>
+          <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:3px;padding:5px 0;text-align:center;font-size:11.5px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 11px">ご相談時の課題</div>
+          <p style="font-size:14px;font-weight:700;line-height:1.95;color:#10302b;margin:0">「事業責任者クラスの採用が、半年止まっている」</p>
+        </div>
+        <div style="flex:none;width:262px;scroll-snap-align:start;background:#fbfefd;border:1px solid #cfe4e1;border-radius:10px;box-shadow:0 4px 14px rgba(16,48,43,0.10);padding:20px 16px 18px;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:center;margin-bottom:11px"><img src="assets/person/woman.jpg" alt="" style="width:84px;height:84px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 3px 10px rgba(16,48,43,0.18)"></div>
+          <div style="text-align:center;font-size:11.5px;font-weight:700;color:#6d8d89;margin-bottom:3px">取締役</div>
+          <div style="text-align:center;font-size:15px;font-weight:900;color:#1d7a72;line-height:1.6;margin-bottom:14px">人材企業</div>
+          <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:3px;padding:5px 0;text-align:center;font-size:11.5px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 11px">ご相談時の課題</div>
+          <p style="font-size:14px;font-weight:700;line-height:1.95;color:#10302b;margin:0">「広告費は上がるのに、獲得単価が改善しない」</p>
+        </div>
+        <div style="flex:none;width:262px;scroll-snap-align:start;background:#fbfefd;border:1px solid #cfe4e1;border-radius:10px;box-shadow:0 4px 14px rgba(16,48,43,0.10);padding:20px 16px 18px;display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:center;margin-bottom:11px"><img src="assets/person/man_03.jpg" alt="" style="width:84px;height:84px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 3px 10px rgba(16,48,43,0.18)"></div>
+          <div style="text-align:center;font-size:11.5px;font-weight:700;color:#6d8d89;margin-bottom:3px">代表取締役</div>
+          <div style="text-align:center;font-size:15px;font-weight:900;color:#1d7a72;line-height:1.6;margin-bottom:14px">建設業</div>
+          <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:3px;padding:5px 0;text-align:center;font-size:11.5px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 11px">ご相談時の課題</div>
+          <p style="font-size:14px;font-weight:700;line-height:1.95;color:#10302b;margin:0">「人手不足が深刻で、業務効率化の手段を探している」</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="service" data-screen-label="サービス概要" style="background:#fbfefd;padding:46px 24px;border-top:1px solid #cfe4e1">
+    <h2 style="text-align:center;font-size:21px;line-height:1.75;margin:0 0 14px;font-weight:900;color:#10302b;letter-spacing:0.01em">粗利保証型の営業支援<br><img src="assets/logo-w-gold.png" alt="W" style="height:21px;width:auto;display:inline-block;vertical-align:-3px">とはどんなサービス？</h2>
+    <p style="text-align:center;font-size:15.5px;line-height:1.95;color:#38534f;margin:0 0 20px">ニーズをベースに15年かけて築いた、<br>18,000社の決裁者人脈からご紹介します。</p>
+    <div style="display:flex;justify-content:center;margin:6px 0 22px"><img src="assets/illust/hearing.png" alt="商材のヒアリング" style="width:296px;max-width:78%;height:auto;display:block"></div>
+    <div id="fig-service" style="background:#fbfefd;border:1px solid #cfe4e1;box-shadow:0 4px 16px rgba(16,48,43,0.09)">
+      <div style="background:linear-gradient(160deg,#14403a 0%,#10302b 100%);padding:16px 16px 14px;text-align:center">
+        <div style="font-size:12px;font-weight:900;color:#7fcdc5;letter-spacing:0.18em">サービス概要</div>
+      </div>
+      <div style="padding:0 18px 18px">
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid #e4f2f0;"><span style="flex:none;width:104px;font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.08em">料金</span><span style="flex:1;text-align:right;color:#10302b"><span style="font-size:clamp(26px,8vw,32px);font-weight:900;line-height:1;letter-spacing:-0.01em;color:#10302b">300</span><span style="font-size:15px;font-weight:900;margin-left:2px">万円</span></span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid #e4f2f0;"><span style="flex:none;width:104px;font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.08em">目標粗利</span><span style="flex:1;text-align:right;color:#10302b"><span style="font-size:clamp(26px,8vw,32px);font-weight:900;line-height:1;letter-spacing:-0.01em;color:#28968d">1,000</span><span style="font-size:15px;font-weight:900;margin-left:2px">万円〜</span></span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid #e4f2f0;"><span style="flex:none;width:104px;font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.08em">年間商談数</span><span style="flex:1;text-align:right;color:#10302b"><span style="font-size:clamp(26px,8vw,32px);font-weight:900;line-height:1;letter-spacing:-0.01em;color:#10302b">40</span><span style="font-size:15px;font-weight:900;margin-left:2px">件</span></span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:16px 0;"><span style="flex:none;width:104px;font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.08em">粗利保証</span><span style="flex:1;text-align:right;color:#10302b"><span style="font-size:clamp(26px,8vw,32px);font-weight:900;line-height:1;letter-spacing:-0.01em;color:#28968d">600</span><span style="font-size:15px;font-weight:900;margin-left:2px">万円</span></span></div>
+        <div style="background:#eff8f6;border:1px solid #b0d7d1;padding:12px 14px;margin-top:14px"><div style="font-size:14.5px;font-weight:900;color:#10302b;line-height:1.7">600万円は<span style="color:#28968d">上限ではなく、下限</span>です。</div><div style="font-size:12.5px;font-weight:500;color:#53706c;line-height:1.8;margin-top:4px">1,000万円、2,000万円と、粗利の最大化まで伴走します。創出した粗利はすべて御社の利益になります。</div></div>
+      </div>
+      <div style="padding:0 18px 20px">
+        <div style="font-size:12.5px;font-weight:900;color:#1d7a72;letter-spacing:0.14em;padding:2px 0 12px;border-top:1px solid #e4f2f0">その流れ</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="background:#fbfefd;border:1px solid #cfe4e1;box-shadow:0 3px 12px rgba(16,48,43,0.08)"><div style="display:flex;justify-content:center;padding:10px 0 0"><span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;letter-spacing:0.14em;padding:4px 15px;border-radius:3px">STEP 1</span></div><div style="display:flex;align-items:center;gap:12px;padding:11px 14px 12px;border-bottom:1px solid #e4f2f0"><img src="assets/step/step1.jpg" alt="商材のヒアリング" style="flex:none;width:108px;height:74px;border-radius:4px;object-fit:cover;display:block"><span style="flex:1;min-width:0;font-size:15px;font-weight:900;color:#10302b;line-height:1.6">商材をヒアリングし、審査</span></div><div style="padding:11px 14px 14px;font-size:13.5px;font-weight:500;color:#53706c;line-height:1.85">対象業種・粗利率・提供体制を確認します。</div></div>
+        <div style="display:flex;justify-content:center;margin:-2px 0"><span style="width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:9px solid #b0cdc9;display:block"></span></div>
+        <div style="background:#fbfefd;border:1px solid #cfe4e1;box-shadow:0 3px 12px rgba(16,48,43,0.08)"><div style="display:flex;justify-content:center;padding:10px 0 0"><span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;letter-spacing:0.14em;padding:4px 15px;border-radius:3px">STEP 2</span></div><div style="display:flex;align-items:center;gap:12px;padding:11px 14px 12px;border-bottom:1px solid #e4f2f0"><div style="flex:none;width:108px;height:74px;border:2px dashed #a4d0ca;border-radius:4px;background:repeating-linear-gradient(115deg,#eff8f6 0 6px,#e4f2f0 6px 12px);display:flex;align-items:center;justify-content:center"><span style="font-size:10.5px;font-weight:900;color:#6d8d89;letter-spacing:0.06em">写真</span></div><span style="flex:1;min-width:0;font-size:15px;font-weight:900;color:#10302b;line-height:1.6">18,000社から決裁者を抽出</span></div><div style="padding:11px 14px 14px;font-size:13.5px;font-weight:500;color:#53706c;line-height:1.85">御社の商材にニーズがあるかを、一社ずつ確認します。</div></div>
+        <div style="display:flex;justify-content:center;margin:-2px 0"><span style="width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-top:9px solid #b0cdc9;display:block"></span></div>
+        <div style="background:#fbfefd;border:1px solid #cfe4e1;box-shadow:0 3px 12px rgba(16,48,43,0.08)"><div style="display:flex;justify-content:center;padding:10px 0 0"><span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;letter-spacing:0.14em;padding:4px 15px;border-radius:3px">STEP 3</span></div><div style="display:flex;align-items:center;gap:12px;padding:11px 14px 12px;border-bottom:1px solid #e4f2f0"><div style="flex:none;width:108px;height:74px;border:2px dashed #a4d0ca;border-radius:4px;background:repeating-linear-gradient(115deg,#eff8f6 0 6px,#e4f2f0 6px 12px);display:flex;align-items:center;justify-content:center"><span style="font-size:10.5px;font-weight:900;color:#6d8d89;letter-spacing:0.06em">写真</span></div><span style="flex:1;min-width:0;font-size:15px;font-weight:900;color:#10302b;line-height:1.6">紹介として商談をセット</span></div><div style="padding:11px 14px 14px;font-size:13.5px;font-weight:500;color:#53706c;line-height:1.85">初回から具体的な話が進む状態でお繋ぎします。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="riyu" data-screen-label="3つの理由" style="background:#ffffff;padding:46px 24px 24px;border-top:1px solid #cfe4e1">
+    <h2 style="text-align:center;font-size:21px;line-height:1.75;margin:0 0 30px;font-weight:900;color:#10302b;letter-spacing:0.01em">粗利600万円保証を<br><span style="background:linear-gradient(90deg,#28968d,#28968d);background-size:100% 2px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:5px">&ldquo;言い切れる&rdquo;3つの理由</span></h2>
+    <div style="margin:0 0 40px">
+      <div style="font-size:clamp(42px,13vw,58px);font-weight:900;color:#a9dbd5;line-height:1;letter-spacing:0.02em;margin-bottom:12px">01</div>
+      <h3 style="font-size:clamp(19px,5.8vw,25px);line-height:1.5;font-weight:900;margin:0 0 18px;color:#10302b;letter-spacing:0.01em">受けるのは、<br><span style="color:#28968d">成果が見込める企業だけ。</span></h3>
+      <p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px">対象業種・商材の<span style="font-weight:900">粗利率や提供体制</span>を、お引き受けの前に審査しています。</p><p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px">条件が揃った企業だけをお受けするため、<span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.85) 58%);font-weight:900">誰にでも売らないからこそ保証を付けられます</span>。</p><p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px">だからこそ、成果が見込める体制のまま最後まで伴走できます。</p>
+    </div>
+    <div style="margin:0 0 40px">
+      <div style="font-size:clamp(42px,13vw,58px);font-weight:900;color:#a9dbd5;line-height:1;letter-spacing:0.02em;margin-bottom:12px">02</div>
+      <h3 style="font-size:clamp(19px,5.8vw,25px);line-height:1.5;font-weight:900;margin:0 0 18px;color:#10302b;letter-spacing:0.01em">15年かけて築いた、<br><span style="color:#28968d">18,000社の決裁者人脈。</span></h3>
+      <p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px">購入リストでも、飛び込みのアポでもありません。</p><p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px">15年間、<span style="font-weight:900">一社ずつ直接お会いして積み上げた18,000社</span>です。</p><p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.85) 58%);font-weight:900">だから決裁者本人に、直接つながります</span>。</p>
+    </div>
+    <div style="margin:0 0 40px">
+      <div style="font-size:clamp(42px,13vw,58px);font-weight:900;color:#a9dbd5;line-height:1;letter-spacing:0.02em;margin-bottom:12px">03</div>
+      <h3 style="font-size:clamp(19px,5.8vw,25px);line-height:1.5;font-weight:900;margin:0 0 18px;color:#10302b;letter-spacing:0.01em">ニーズを確認できた<br><span style="color:#28968d">企業だけをご紹介。</span></h3>
+      <p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px">お繋ぎする前に、<span style="font-weight:900">ニーズの有無を必ず確認</span>しています。</p><p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px">「いまは考えていない」相手はご紹介しません。</p><p style="font-size:14.5px;font-weight:500;line-height:2.05;color:#10302b;margin:0 0 4px"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.85) 58%);font-weight:900">だから「探している相手」とだけ商談できます</span>。</p>
+    </div>
+  </section>
+  <section id="gyoshu" data-screen-label="対象商材" style="background:#eff8f6;padding:46px 24px;border-top:1px solid #cfe4e1">
+    <h2 style="text-align:center;font-size:21px;line-height:1.75;margin:0 0 12px;font-weight:900;color:#10302b;letter-spacing:0.01em">これまでの支援実績は、<br><span style="background:linear-gradient(90deg,#28968d,#28968d);background-size:100% 2px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:5px">BtoB商材が中心</span>です。</h2>
+    <div style="display:flex;align-items:center;gap:9px;margin:30px 0 14px"><span style="flex:none;width:4px;height:17px;background:#28968d;display:block"></span><span style="font-size:15.5px;font-weight:900;color:#10302b;letter-spacing:0.04em;white-space:nowrap">支援実績</span><span style="flex:1;height:1px;background:#cfe4e1;display:block"></span></div>
+    <div style="font-size:11.5px;color:#6d8d89;text-align:center;margin:0 0 6px">→ 横にスワイプしてご覧いただけます</div>
+    <div class="hscroll" style="display:flex;gap:12px;padding:4px 24px 16px;margin:0 -24px;align-items:stretch">
+        <div style="flex:none;width:286px;scroll-snap-align:start;position:relative;padding-top:46px;display:flex">
+          <img src="assets/person/case_05.jpg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 4px 12px rgba(16,48,43,0.20);z-index:1">
+          <div style="position:relative;flex:1;background:#fbfefd;border:1px solid #cfe4e1;border-radius:14px;padding:56px 16px 20px;box-shadow:0 4px 16px rgba(16,48,43,0.09);overflow:hidden">
+            <span aria-hidden="true" style="position:absolute;top:50px;left:14px;font-size:52px;line-height:0.7;font-weight:900;color:#e4f2f0">&ldquo;</span>
+            <div style="position:relative;text-align:center;font-size:12px;font-weight:900;color:#6d8d89;line-height:1.6;min-height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:5px"><span>広告・クリエイティブ<span style="margin-left:6px">K様</span></span></div>
+            <div style="position:relative;text-align:center;font-size:15.5px;font-weight:900;color:#1d7a72;line-height:1.65;min-height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span>新たな法人案件の獲得と<br>受注経路の拡大</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">売上実績</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;color:#10302b;margin-bottom:16px"><span style="font-size:23px;font-weight:900;line-height:1.2;letter-spacing:-0.01em;color:#28968d">72,730,000</span><span style="font-size:13px;font-weight:900">円</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">ご支援内容</div>
+            <p style="font-size:13px;font-weight:500;line-height:1.95;color:#10302b;margin:0 0 8px">展示会と既存のご紹介が中心で、狙いたい規模の企業との接点がない状態でした。</p>
+            <p style="font-size:13px;font-weight:700;line-height:1.95;color:#10302b;margin:0"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.9) 58%)">制作・広告の発注ニーズを確認できた決裁者に絞ってお繋ぎし、初回から条件の話が進む商談を継続してご提供しています。</span></p>
+          </div>
+        </div>
+        <div style="flex:none;width:286px;scroll-snap-align:start;position:relative;padding-top:46px;display:flex">
+          <img src="assets/person/case_01.jpg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 4px 12px rgba(16,48,43,0.20);z-index:1">
+          <div style="position:relative;flex:1;background:#fbfefd;border:1px solid #cfe4e1;border-radius:14px;padding:56px 16px 20px;box-shadow:0 4px 16px rgba(16,48,43,0.09);overflow:hidden">
+            <span aria-hidden="true" style="position:absolute;top:50px;left:14px;font-size:52px;line-height:0.7;font-weight:900;color:#e4f2f0">&ldquo;</span>
+            <div style="position:relative;text-align:center;font-size:12px;font-weight:900;color:#6d8d89;line-height:1.6;min-height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:5px"><span>補助金・助成金申請サポート<span style="margin-left:6px">Y様</span></span></div>
+            <div style="position:relative;text-align:center;font-size:15.5px;font-weight:900;color:#1d7a72;line-height:1.65;min-height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span>補助金・助成金の活用を<br>検討する企業との接点づくり</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">売上実績</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;color:#10302b;margin-bottom:16px"><span style="font-size:23px;font-weight:900;line-height:1.2;letter-spacing:-0.01em;color:#28968d">8,640,000</span><span style="font-size:13px;font-weight:900">円</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">ご支援内容</div>
+            <p style="font-size:13px;font-weight:500;line-height:1.95;color:#10302b;margin:0 0 8px">制度を必要とする企業に、申請前のタイミングで出会えないことが課題でした。</p>
+            <p style="font-size:13px;font-weight:700;line-height:1.95;color:#10302b;margin:0"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.9) 58%)">設備投資や採用計画を控えた決裁者を抽出し、相談のタイミングが合う企業だけをご紹介しています。</span></p>
+          </div>
+        </div>
+        <div style="flex:none;width:286px;scroll-snap-align:start;position:relative;padding-top:46px;display:flex">
+          <img src="assets/person/case_03.jpg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 4px 12px rgba(16,48,43,0.20);z-index:1">
+          <div style="position:relative;flex:1;background:#fbfefd;border:1px solid #cfe4e1;border-radius:14px;padding:56px 16px 20px;box-shadow:0 4px 16px rgba(16,48,43,0.09);overflow:hidden">
+            <span aria-hidden="true" style="position:absolute;top:50px;left:14px;font-size:52px;line-height:0.7;font-weight:900;color:#e4f2f0">&ldquo;</span>
+            <div style="position:relative;text-align:center;font-size:12px;font-weight:900;color:#6d8d89;line-height:1.6;min-height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:5px"><span>財務システム・節税支援<span style="margin-left:6px">S様</span></span></div>
+            <div style="position:relative;text-align:center;font-size:15.5px;font-weight:900;color:#1d7a72;line-height:1.65;min-height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span>財務・節税に課題を抱える<br>経営者との接点づくり</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">売上実績</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;color:#10302b;margin-bottom:16px"><span style="font-size:23px;font-weight:900;line-height:1.2;letter-spacing:-0.01em;color:#28968d">4,000,000</span><span style="font-size:13px;font-weight:900">円</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">ご支援内容</div>
+            <p style="font-size:13px;font-weight:500;line-height:1.95;color:#10302b;margin:0 0 8px">テーマの性質上、担当者では話が進まず決裁者に届かないことが課題でした。</p>
+            <p style="font-size:13px;font-weight:700;line-height:1.95;color:#10302b;margin:0"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.9) 58%)">決算期や資金繰りの課題を確認できた経営者本人にお繋ぎし、初回から具体的な相談として進んでいます。</span></p>
+          </div>
+        </div>
+        <div style="flex:none;width:286px;scroll-snap-align:start;position:relative;padding-top:46px;display:flex">
+          <img src="assets/person/case_04.jpg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 4px 12px rgba(16,48,43,0.20);z-index:1">
+          <div style="position:relative;flex:1;background:#fbfefd;border:1px solid #cfe4e1;border-radius:14px;padding:56px 16px 20px;box-shadow:0 4px 16px rgba(16,48,43,0.09);overflow:hidden">
+            <span aria-hidden="true" style="position:absolute;top:50px;left:14px;font-size:52px;line-height:0.7;font-weight:900;color:#e4f2f0">&ldquo;</span>
+            <div style="position:relative;text-align:center;font-size:12px;font-weight:900;color:#6d8d89;line-height:1.6;min-height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:5px"><span>IT・システム開発・セキュリティ・SaaS・SES<span style="margin-left:6px">S様</span></span></div>
+            <div style="position:relative;text-align:center;font-size:15.5px;font-weight:900;color:#1d7a72;line-height:1.65;min-height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span>システム開発・IT支援を<br>必要とする企業の新規開拓</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">売上実績</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;color:#10302b;margin-bottom:16px"><span style="font-size:23px;font-weight:900;line-height:1.2;letter-spacing:-0.01em;color:#28968d">3,300,000</span><span style="font-size:13px;font-weight:900">円</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">ご支援内容</div>
+            <p style="font-size:13px;font-weight:500;line-height:1.95;color:#10302b;margin:0 0 8px">商材の幅が広く、どの企業に何を提案すべきかを絞り込めていませんでした。</p>
+            <p style="font-size:13px;font-weight:700;line-height:1.95;color:#10302b;margin:0"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.9) 58%)">開発・保守・人員のどこに課題があるかを事前に確認し、商材が噛み合う企業だけをご紹介しています。</span></p>
+          </div>
+        </div>
+        <div style="flex:none;width:286px;scroll-snap-align:start;position:relative;padding-top:46px;display:flex">
+          <img src="assets/person/case_02.jpg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 4px 12px rgba(16,48,43,0.20);z-index:1">
+          <div style="position:relative;flex:1;background:#fbfefd;border:1px solid #cfe4e1;border-radius:14px;padding:56px 16px 20px;box-shadow:0 4px 16px rgba(16,48,43,0.09);overflow:hidden">
+            <span aria-hidden="true" style="position:absolute;top:50px;left:14px;font-size:52px;line-height:0.7;font-weight:900;color:#e4f2f0">&ldquo;</span>
+            <div style="position:relative;text-align:center;font-size:12px;font-weight:900;color:#6d8d89;line-height:1.6;min-height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:5px"><span>経営者コミュニティ・ビジネスマッチング交流会<span style="margin-left:6px">K様</span></span></div>
+            <div style="position:relative;text-align:center;font-size:15.5px;font-weight:900;color:#1d7a72;line-height:1.65;min-height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span>新規会員の獲得と<br>経営者層への認知拡大</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">売上実績</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;color:#10302b;margin-bottom:16px"><span style="font-size:23px;font-weight:900;line-height:1.2;letter-spacing:-0.01em;color:#28968d">3,050,000</span><span style="font-size:13px;font-weight:900">円</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">ご支援内容</div>
+            <p style="font-size:13px;font-weight:500;line-height:1.95;color:#10302b;margin:0 0 8px">広告では経営者層に届きにくく、会員数の伸びが鈍化していました。</p>
+            <p style="font-size:13px;font-weight:700;line-height:1.95;color:#10302b;margin:0"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.9) 58%)">人脈づくりに関心のある決裁者へ紹介としてお繋ぎし、入会につながる出会いを継続して創出しています。</span></p>
+          </div>
+        </div>
+        <div style="flex:none;width:286px;scroll-snap-align:start;position:relative;padding-top:46px;display:flex">
+          <img src="assets/person/case_06.jpg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 4px 12px rgba(16,48,43,0.20);z-index:1">
+          <div style="position:relative;flex:1;background:#fbfefd;border:1px solid #cfe4e1;border-radius:14px;padding:56px 16px 20px;box-shadow:0 4px 16px rgba(16,48,43,0.09);overflow:hidden">
+            <span aria-hidden="true" style="position:absolute;top:50px;left:14px;font-size:52px;line-height:0.7;font-weight:900;color:#e4f2f0">&ldquo;</span>
+            <div style="position:relative;text-align:center;font-size:12px;font-weight:900;color:#6d8d89;line-height:1.6;min-height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:5px"><span>映像制作<span style="margin-left:6px">F様</span></span></div>
+            <div style="position:relative;text-align:center;font-size:15.5px;font-weight:900;color:#1d7a72;line-height:1.65;min-height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span>PR動画・採用動画など<br>法人案件の受注拡大</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">売上実績</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;color:#10302b;margin-bottom:16px"><span style="font-size:23px;font-weight:900;line-height:1.2;letter-spacing:-0.01em;color:#28968d">2,500,000</span><span style="font-size:13px;font-weight:900">円</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">ご支援内容</div>
+            <p style="font-size:13px;font-weight:500;line-height:1.95;color:#10302b;margin:0 0 8px">制作会社が多く、価格勝負になりやすいことが課題でした。</p>
+            <p style="font-size:13px;font-weight:700;line-height:1.95;color:#10302b;margin:0"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.9) 58%)">採用や広報の予算を持つ決裁者に直接お繋ぎし、価格比較ではなく相談から始まる商談になっています。</span></p>
+          </div>
+        </div>
+        <div style="flex:none;width:286px;scroll-snap-align:start;position:relative;padding-top:46px;display:flex">
+          <img src="assets/person/case_07.jpg" alt="" style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:92px;height:92px;border-radius:50%;object-fit:cover;display:block;border:3px solid #ffffff;box-shadow:0 4px 12px rgba(16,48,43,0.20);z-index:1">
+          <div style="position:relative;flex:1;background:#fbfefd;border:1px solid #cfe4e1;border-radius:14px;padding:56px 16px 20px;box-shadow:0 4px 16px rgba(16,48,43,0.09);overflow:hidden">
+            <span aria-hidden="true" style="position:absolute;top:50px;left:14px;font-size:52px;line-height:0.7;font-weight:900;color:#e4f2f0">&ldquo;</span>
+            <div style="position:relative;text-align:center;font-size:12px;font-weight:900;color:#6d8d89;line-height:1.6;min-height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:5px"><span>テレアポ・代理店開拓支援<span style="margin-left:6px">T様</span></span></div>
+            <div style="position:relative;text-align:center;font-size:15.5px;font-weight:900;color:#1d7a72;line-height:1.65;min-height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span>営業・代理店開拓に課題を持つ<br>企業との商談機会の創出</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">売上実績</div>
+            <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;color:#10302b;margin-bottom:16px"><span style="font-size:23px;font-weight:900;line-height:1.2;letter-spacing:-0.01em;color:#28968d">1,200,000</span><span style="font-size:13px;font-weight:900">円</span></div>
+            <div style="background:#eff8f6;border:1px solid #cfe4e1;border-radius:4px;padding:6px 0;text-align:center;font-size:12px;font-weight:900;color:#1d7a72;letter-spacing:0.1em;margin:0 0 12px">ご支援内容</div>
+            <p style="font-size:13px;font-weight:500;line-height:1.95;color:#10302b;margin:0 0 8px">同業が多く、自社の強みを伝える前に断られてしまう状況でした。</p>
+            <p style="font-size:13px;font-weight:700;line-height:1.95;color:#10302b;margin:0"><span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(255,241,118,0.9) 58%)">営業体制に課題を確認できた企業だけをご紹介し、紹介という入り方で話を聞いてもらえる状態をつくっています。</span></p>
+          </div>
+        </div>
+    </div>
+    <p style="font-size:11.5px;color:#6d8d89;line-height:1.8;margin:0 0 4px">※ ご支援期間中に創出された売上です。成果は商材・体制により異なります。</p>
+    <div style="display:flex;align-items:center;gap:9px;margin:30px 0 14px"><span style="flex:none;width:4px;height:17px;background:#28968d;display:block"></span><span style="font-size:15.5px;font-weight:900;color:#10302b;letter-spacing:0.04em;white-space:nowrap">対象になる取引の規模</span><span style="flex:1;height:1px;background:#cfe4e1;display:block"></span></div>
+    <div style="background:#fbfefd;border:1px solid #c2dbd7;padding:18px 16px 20px;margin:0 0 20px">
+      <div style="display:flex;align-items:stretch;gap:6px">
+        <div style="flex:1;min-width:0;background:#eff8f6;border:1px solid #b0d7d1;padding:14px 8px 13px;text-align:center"><div style="font-size:11.5px;font-weight:700;color:#1d7a72;letter-spacing:0.06em;margin-bottom:6px">一括で</div><div style="font-size:21px;font-weight:900;color:#28968d;line-height:1.25;letter-spacing:-0.01em">30<span style="font-size:14px">万円</span></div><div style="font-size:13px;font-weight:700;color:#10302b;line-height:1.6;margin-top:2px">以上</div><div style="font-size:11px;color:#53706c;line-height:1.6;margin-top:5px">単発のご契約</div></div><div style="flex:none;width:36px;display:flex;align-items:center;justify-content:center"><span style="font-size:11.5px;font-weight:700;color:#6d8d89">または</span></div><div style="flex:1;min-width:0;background:#eff8f6;border:1px solid #b0d7d1;padding:14px 8px 13px;text-align:center"><div style="font-size:11.5px;font-weight:700;color:#1d7a72;letter-spacing:0.06em;margin-bottom:6px">継続契約で</div><div style="font-size:21px;font-weight:900;color:#28968d;line-height:1.25;letter-spacing:-0.01em">月額5<span style="font-size:14px">万円</span></div><div style="font-size:13px;font-weight:700;color:#10302b;line-height:1.6;margin-top:2px">× 12ヶ月</div><div style="font-size:11px;color:#53706c;line-height:1.6;margin-top:5px">＝ 年間60万円</div></div>
+      </div>
+      <div style="display:flex;justify-content:center;margin:12px 0 10px">
+        <span style="width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-top:10px solid #b0cdc9;display:block"></span>
+      </div>
+      <div style="background:#e4f2f0;border:1px solid #b0d7d1;padding:13px 12px;text-align:center">
+        <span style="font-size:15px;font-weight:900;color:#10302b;line-height:1.75">どちらのかたちでも、<span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(127,205,197,0.55) 58%);padding:0 2px 1px">保証の対象になります</span></span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:9px;margin:30px 0 14px"><span style="flex:none;width:4px;height:17px;background:#28968d;display:block"></span><span style="font-size:15.5px;font-weight:900;color:#10302b;letter-spacing:0.04em;white-space:nowrap">得意な業種</span><span style="flex:1;height:1px;background:#cfe4e1;display:block"></span></div>
+    <p style="text-align:center;font-size:16px;font-weight:900;line-height:1.9;color:#10302b;margin:0 0 26px">担当者だけでは決まらない価格帯。<br>だから<span style="background:linear-gradient(180deg,rgba(255,255,255,0) 58%,rgba(127,205,197,0.55) 58%);padding:0 2px 1px">「誰からの紹介か」で結果が変わります</span></p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:6px"><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">経営コンサルティング</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">資金調達支援</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">M&amp;A・事業承継</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">保険・士業サービス</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">SaaS・DXツール導入</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">広告・PR・Web制作</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">人材紹介・採用支援</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">研修・社員教育</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">省エネ・電力切替</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">オフィス設備・什器</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">不動産・店舗開発</div><div style="background:#fbfefd;border:2px solid #1d7a72;border-radius:6px;padding:12px 8px;text-align:center;font-size:13px;font-weight:700;color:#10302b;line-height:1.5">福利厚生サービス</div></div>
+    <div style="display:flex;align-items:center;gap:9px;margin:30px 0 14px"><span style="flex:none;width:4px;height:17px;background:#28968d;display:block"></span><span style="font-size:15.5px;font-weight:900;color:#10302b;letter-spacing:0.04em;white-space:nowrap">相性の良くない業種</span><span style="flex:1;height:1px;background:#cfe4e1;display:block"></span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:10px">
+      <div style="background:#fbfefd;border:1px solid #e3c4bb;border-radius:6px;padding:14px"><div style="display:flex;align-items:center;gap:10px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#c0392b;color:#ffffff;font-size:11px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center;padding-bottom:1px">&#10005;</span><span style="font-size:14px;font-weight:900;line-height:1.7;color:#10302b">一般消費者向け（BtoC）の商材<span style="color:#c0392b;font-size:12.5px;font-weight:900;margin-left:2px;vertical-align:2px">&#8251;</span></span></div></div>
+      <div style="background:#fbfefd;border:1px solid #e3c4bb;border-radius:6px;padding:14px"><div style="display:flex;align-items:center;gap:10px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#c0392b;color:#ffffff;font-size:11px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center;padding-bottom:1px">&#10005;</span><span style="font-size:14px;font-weight:900;line-height:1.7;color:#10302b">対象企業が極端に限られる、ニッチな商材</span></div></div>
+      <div style="background:#fbfefd;border:1px solid #e3c4bb;border-radius:6px;padding:14px"><div style="display:flex;align-items:center;gap:10px"><span style="flex:none;width:20px;height:20px;border-radius:50%;background:#c0392b;color:#ffffff;font-size:11px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center;padding-bottom:1px">&#10005;</span><span style="font-size:14px;font-weight:900;line-height:1.7;color:#10302b">単価が低く、受注件数を多く必要とする商材</span></div></div>
+    </div>
+    <p style="font-size:12.5px;font-weight:500;line-height:1.85;color:#53706c;margin:0 0 24px"><span style="color:#c0392b;font-weight:900">&#8251;</span> 経営者個人に向けた商材であれば、ご相談いただけます。決裁者との相性が良いためです。</p>
+
+    <div style="text-align:center">
+      <p style="font-size:16px;font-weight:900;line-height:1.9;margin:0 0 4px;color:#10302b">単価が高くて売りにくい商材ほど、<br>ご相談ください。</p>
+      <p style="font-size:13px;color:#53706c;margin:0;line-height:1.9">対象かどうかの確認は無料です。</p>
+    </div>
+  </section>
+  <section id="faq" data-screen-label="よくあるご質問" style="background:#fbfefd;padding:46px 24px;border-top:1px solid #cfe4e1">
+    <h2 style="text-align:center;font-size:21px;margin:0 0 22px;font-weight:900;line-height:1.7;color:#10302b;letter-spacing:0.01em">よくあるご質問</h2>
+    <div style="display:flex;flex-direction:column;gap:8px"><details class="faq" style="background:linear-gradient(180deg,#fbfefd,#f4fbfa);border:1px solid #cfe4e1;box-shadow:0 3px 12px rgba(16,48,43,0.06);padding:0 18px"><summary style="display:flex;gap:10px;padding:16px 30px 16px 0;font-size:14.5px;font-weight:700;cursor:pointer;line-height:1.8;color:#10302b"><span style="flex:none;color:#1d7a72;font-weight:900">Q.</span>なぜ600万円という保証額なのですか？</summary><p style="font-size:14.5px;line-height:2;color:#38534f;margin:0 0 18px;padding-left:24px;border-top:1px solid #cfe4e1;padding-top:14px">ご投資いただく300万円の2倍を、「最低でもここまでは」という下限として設定しているためです。下振れを契約で固定しておくことで、社内や役員への説明が立つ投資判断になります。</p></details><details class="faq" style="background:linear-gradient(180deg,#fbfefd,#f4fbfa);border:1px solid #cfe4e1;box-shadow:0 3px 12px rgba(16,48,43,0.06);padding:0 18px"><summary style="display:flex;gap:10px;padding:16px 30px 16px 0;font-size:14.5px;font-weight:700;cursor:pointer;line-height:1.8;color:#10302b"><span style="flex:none;color:#1d7a72;font-weight:900">Q.</span>紹介の時点で、予算や導入時期も決まっていますか？</summary><p style="font-size:14.5px;line-height:2;color:#38534f;margin:0 0 18px;padding-left:24px;border-top:1px solid #cfe4e1;padding-top:14px">確認しているのは「ニーズがあるかどうか」です。予算や時期まで固まっているとは限りません。そこを詰めていくのが商談の役割なので、紹介の段階では「探している状態であること」を担保しています。</p></details><details class="faq" style="background:linear-gradient(180deg,#fbfefd,#f4fbfa);border:1px solid #cfe4e1;box-shadow:0 3px 12px rgba(16,48,43,0.06);padding:0 18px"><summary style="display:flex;gap:10px;padding:16px 30px 16px 0;font-size:14.5px;font-weight:700;cursor:pointer;line-height:1.8;color:#10302b"><span style="flex:none;color:#1d7a72;font-weight:900">Q.</span>600万円に届かなかった場合はどうなりますか？</summary><p style="font-size:14.5px;line-height:2;color:#38534f;margin:0 0 18px;padding-left:24px;border-top:1px solid #cfe4e1;padding-top:14px">契約1年で届かなかった場合は、達成するまで追加費用なしで支援を延長します。契約期間中にご紹介した案件が期間終了後に受注へ至った場合も、保証粗利に含めます。</p></details><details class="faq" style="background:linear-gradient(180deg,#fbfefd,#f4fbfa);border:1px solid #cfe4e1;box-shadow:0 3px 12px rgba(16,48,43,0.06);padding:0 18px"><summary style="display:flex;gap:10px;padding:16px 30px 16px 0;font-size:14.5px;font-weight:700;cursor:pointer;line-height:1.8;color:#10302b"><span style="flex:none;color:#1d7a72;font-weight:900">Q.</span>支払い方法や途中解約について教えてください。</summary><p style="font-size:14.5px;line-height:2;color:#38534f;margin:0 0 18px;padding-left:24px;border-top:1px solid #cfe4e1;padding-top:14px">原則は一括払いですが、やむを得ない場合はご相談ください（手数料等が発生します）。年間契約のため途中解約は原則お受けしていませんが、ご事情により個別に対応します。</p></details></div>
+  </section>
+  <section id="contact" data-screen-label="資料ダウンロード" style="position:relative;overflow:hidden;background:repeating-linear-gradient(115deg,rgba(255,255,255,0.045) 0 2px,rgba(255,255,255,0) 2px 11px),linear-gradient(165deg,#144a43 0%,#10302b 55%,#0a241f 100%);padding:52px 20px 56px;border-top:1px solid #cfe4e1">
+    <span aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;display:block;pointer-events:none"><span style="position:absolute;top:-10%;right:-16%;width:76%;height:46%;background:linear-gradient(200deg,rgba(127,205,197,0.22),rgba(127,205,197,0));clip-path:polygon(26% 0,100% 14%,100% 84%,0 100%);display:block"></span><span style="position:absolute;bottom:-12%;left:-10%;width:72%;height:40%;background:linear-gradient(30deg,rgba(255,255,255,0.08),rgba(255,255,255,0));clip-path:polygon(0 30%,72% 0,100% 70%,20% 100%);display:block"></span></span>
+    <div style="position:relative;text-align:center">
+      <img src="assets/logo-w-gold.png" alt="W" style="height:32px;width:auto;display:block;margin:0 auto 18px">
+      <h2 style="font-size:22px;line-height:1.75;margin:0 0 14px;font-weight:900;color:#fbfefd;letter-spacing:0.01em">まずは資料で、<br><span style="background:linear-gradient(90deg,#28968d,#28968d);background-size:100% 2px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:5px">保証の条件</span>をご確認ください。</h2>
+      <p style="font-size:14.5px;line-height:2;margin:0 0 24px;color:#a6c2be;font-weight:500">サービス内容・審査基準・保証の適用条件を<br>まとめた資料をお送りします。<br>ご相談・審査まで費用は一切かかりません。</p>
+    </div>
+    <div style="background:#fbfefd;padding:24px 20px 28px;box-shadow:0 14px 34px rgba(0,0,0,0.34)">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:20px">
+        <span style="width:20px;height:2px;background:linear-gradient(90deg,#28968d,rgba(5,152,141,0));flex:none"></span>
+        <span style="font-size:11.5px;font-weight:900;letter-spacing:0.2em;color:#1d7a72">資料ダウンロードフォーム</span>
+      </div>
+      <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:20px">
+        <div>
+          <label for="f-company" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">会社名<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+          <input id="f-company" name="company" type="text" required placeholder="例：ラフ・メイカー株式会社" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+        </div>
+        <div>
+          <label for="f-name" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">氏名<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+          <input id="f-name" name="name" type="text" required placeholder="例：山田 太郎" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+        </div>
+        <div>
+          <label for="f-email" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">メールアドレス<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+          <input id="f-email" name="email" type="email" required placeholder="例：yamada@example.co.jp" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+        </div>
+        <div>
+          <label for="f-tel" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">電話番号<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+          <input id="f-tel" name="tel" type="tel" required placeholder="例：03-1234-5678" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
+        </div>
+        <div>
+          <label for="f-budget" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">予算として年間300万円以上を確保できますか？<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+          <select id="f-budget" name="budget" required class="sel">
+            <option value="" disabled selected>選択してください</option>
+            <option>はい</option>
+            <option>いいえ</option>
+          </select>
+          <p style="font-size:12.5px;line-height:1.8;color:#1d7a72;margin:8px 0 0">※誠に恐縮ながら、「いいえ」の場合は今回のご案内の対象外となります</p>
+        </div>
+        <div>
+          <label for="f-issue" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">現在、貴社が抱えている課題を教えてください<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+          <select id="f-issue" name="issue" required class="sel">
+            <option value="" disabled selected>選択してください</option>
+            <option>売上が伸び悩んでいる／頭打ちになっている</option>
+            <option>新規顧客・販路をうまく開拓できていない</option>
+            <option>営業の人材・リソースが不足している</option>
+            <option>マーケティング・ブランディングのやり方が分からない</option>
+            <option>決裁者・キーマンとの人脈・つながりがない</option>
+            <option>資金調達・PR・採用・DXなど経営全般に課題がある</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-interest" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">今回、特に興味を持たれた内容を教えてください<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
+          <select id="f-interest" name="interest" required class="sel">
+            <option value="" disabled selected>選択してください</option>
+            <option>ニーズを確認済みの決裁者とのマッチング・紹介</option>
+            <option>代表・田口のマーケティングスキルを活用できる点</option>
+            <option>企業800社・15年で築いた18,000社の人脈</option>
+            <option>ターゲットへのアプローチ代行</option>
+            <option>資金調達・PR・人材・DXまで含む経営ブレインサポート</option>
+            <option>粗利600万円の最低保証（下振れリスクの固定）</option>
+          </select>
+        </div>
+        <div style="font-size:12.5px;line-height:1.9;color:#53706c;background:#eff8f6;border:1px solid #cfe4e1;padding:14px 16px">送信いただいた情報は、お問い合わせ対応の目的にのみ使用します。詳しくは<a href="https://drive.google.com/file/d/1aoLPsLe9loWZZIPutqbFUnU6kxRVnT5W/view?usp=sharing" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認ください。</div>
+        <div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:10px"><span style="width:2px;height:16px;background:#1d7a72;transform:rotate(-20deg);border-radius:1px;flex:none"></span><span style="font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.06em;white-space:nowrap">30秒で入力完了</span><span style="width:2px;height:16px;background:#1d7a72;transform:rotate(20deg);border-radius:1px;flex:none"></span></div>
+          <button type="submit" style="font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#c2571f 0%,#a33f12 100%);color:#fbfefd;font-weight:900;font-size:17px;padding:19px 14px;border:none;border-radius:9999px;cursor:pointer;line-height:1.5;letter-spacing:0.02em;box-shadow:0 4px 0 #7a2c0b, 0 8px 20px rgba(163,63,18,0.30)" style-hover="filter:brightness(1.1)"><span>無料で資料を受け取る</span><span style="flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;font-size:14.5px;line-height:1">&#8594;</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer style="background:#0a221e;padding:34px 24px 42px;color:#a6c2be">
+    <img src="assets/logo-w-gold.png" alt="W" style="height:20px;width:auto;display:block">
+    <p style="font-size:12.5px;line-height:1.8;margin:10px 0 22px;color:#a6c2be">粗利600万円保証付きの営業支援サービス</p>
+    <nav style="display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;font-size:13px;margin-bottom:22px">
+      <a href="#kaiketsu" style="color:#cfe4e1;text-decoration:none">実績</a>
+      <a href="#service" style="color:#cfe4e1;text-decoration:none">サービス内容</a>
+      <a href="#riyu" style="color:#cfe4e1;text-decoration:none">保証できる理由</a>
+      <a href="#gyoshu" style="color:#cfe4e1;text-decoration:none">対象商材</a>
+      <a href="#faq" style="color:#cfe4e1;text-decoration:none">よくあるご質問</a>
+      <a href="#contact" style="color:#cfe4e1;text-decoration:none">資料ダウンロード</a>
+    </nav>
+    <div style="display:flex;gap:16px;font-size:12.5px;margin-bottom:14px">
+      <a href="https://laugh-maker.jp/company" target="_blank" rel="noopener" style="color:#a6c2be;white-space:nowrap">会社概要</a>
+      <a href="https://drive.google.com/file/d/1aoLPsLe9loWZZIPutqbFUnU6kxRVnT5W/view?usp=sharing" target="_blank" rel="noopener" style="color:#a6c2be;white-space:nowrap">プライバシーポリシー</a>
+    </div>
+    <div style="font-size:11.5px;color:#6d8d89">&copy; ラフ・メイカー株式会社</div>
+  </footer>
+  <sc-if value="{{ barVisible }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;bottom:0;left:0;right:0;z-index:30;display:flex;justify-content:center;background:#fbfefd;border-top:2px solid #28968d;box-shadow:0 -6px 20px rgba(16,48,43,0.20)">
+      <div style="width:100%;max-width:430px;padding:10px 16px 12px"><div><div style="display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:10px"><span style="width:2px;height:16px;background:#1d7a72;transform:rotate(-20deg);border-radius:1px;flex:none"></span><span style="font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.06em;white-space:nowrap">30秒で完了</span><span style="width:2px;height:16px;background:#1d7a72;transform:rotate(20deg);border-radius:1px;flex:none"></span></div><a href="#contact" style="display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#c2571f 0%,#a33f12 100%);color:#fbfefd;font-weight:900;font-size:16px;padding:13px 12px;border-radius:9999px;text-decoration:none;line-height:1.5;letter-spacing:0.02em;box-shadow:0 4px 0 #7a2c0b, 0 8px 20px rgba(163,63,18,0.30)" style-hover="filter:brightness(1.1);color:#fbfefd"><span>無料で資料をダウンロード</span><span style="flex:none;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.55);display:flex;align-items:center;justify-content:center;font-size:14.5px;line-height:1">&#8594;</span></a></div></div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { barVisible: false };
+  componentDidMount() {
+    this._check = () => {
+      const fv = document.getElementById('fv');
+      if (!fv) return;
+      const form = document.getElementById('contact');
+      const formNear = form && form.getBoundingClientRect().top < window.innerHeight - 60;
+      const visible = fv.getBoundingClientRect().bottom < 0 && !formNear;
+      if (visible !== this.state.barVisible) this.setState({ barVisible: visible });
+    };
+    document.addEventListener('scroll', this._check, { capture: true, passive: true });
+    this._poll = setInterval(this._check, 700);
+    this._check();
+    this._closeMenu = (ev) => {
+      const a = ev.target.closest && ev.target.closest('#menu a');
+      const m = document.getElementById('menu');
+      if (a && m) m.removeAttribute('open');
+    };
+    document.addEventListener('click', this._closeMenu);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this._check, { capture: true });
+    document.removeEventListener('click', this._closeMenu);
+    clearInterval(this._poll);
+  }
+  renderVals() {
+    const tags = ['経営コンサルティング', 'SaaS・DXツール', '資金調達支援', '省エネ・電力切替', '人材紹介・採用支援', 'M&A・事業承継', '広告・PR・Web制作', 'オフィス設備・什器', '研修・社員教育', '不動産・店舗開発', '保険・士業サービス', '福利厚生サービス'];
+    return {
+      barVisible: this.state.barVisible,
+      marqueeTags: tags.concat(tags),
+      handleSubmit: (e) => {
+        e.preventDefault();
+        if (e.target.checkValidity()) location.href = 'W-Thanks.dc.html';
+        else e.target.reportValidity();
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

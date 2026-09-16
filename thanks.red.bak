@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Noto+Serif+JP:wght@600;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #dedad2; color: #26221e; font-family: "Noto Sans JP", system-ui, sans-serif; font-size: 15px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: #c9392a; }
+a:hover { color: #a32619; }
+* { box-sizing: border-box; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid #c9392a; outline-offset: 2px; }
+</style>
+</helmet>
+<div style="max-width:430px;margin:0 auto;background:#f6f3ec;min-height:100vh;display:flex;flex-direction:column;box-shadow:0 0 40px rgba(20,17,14,0.25)">
+
+  <header style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(250,248,243,0.96);border-bottom:1px solid rgba(38,34,30,0.12)">
+    <a href="W-LP.dc.html" style="display:block;text-decoration:none"><img src="assets/logo-w-red.png" alt="W" style="height:24px;width:auto;display:block"></a>
+    <div style="font-size:10px;line-height:1.5;color:#6d675f;font-weight:500">粗利600万円保障つき<br>営業支援サービス</div>
+  </header>
+
+  <div style="flex:1">
+    <section style="background:linear-gradient(165deg,#2b2723 0%,#1b1815 55%,#242019 100%);padding:48px 24px;color:#f3efe7;text-align:center;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% -20%, rgba(201,57,42,0.25), transparent 55%);pointer-events:none"></div>
+      <div style="position:relative">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#e0563d 0%,#c9392a 55%,#9c2214 100%);color:#fff;font-size:24px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 10px 24px rgba(156,34,20,0.45)">✓</div>
+        <h1 style="font-size:23px;line-height:1.8;margin:0;font-weight:900;color:#fdfcf9;letter-spacing:0.02em">お問い合わせを<br>受け付けました</h1>
+        <div style="width:52px;height:1px;background:linear-gradient(90deg,rgba(201,57,42,0),#c9392a,rgba(201,57,42,0));margin:16px auto"></div>
+        <p style="font-size:13px;line-height:2.1;color:#cfc9bd;margin:0">1営業日以内に、担当よりメールまたは<br>お電話でご連絡いたします。</p>
+        <p style="font-size:11px;line-height:1.9;color:#8f887b;margin:14px 0 0">数日経っても連絡がない場合は、<br>迷惑メールフォルダをご確認ください。</p>
+      </div>
+    </section>
+
+    <section style="padding:48px 24px;background:#f6f3ec">
+      <h2 style="font-size:21px;line-height:1.8;margin:0;font-weight:900;letter-spacing:0.02em">成果の出ない営業代行を、<br>なくしたい。</h2>
+      <div style="width:52px;height:2px;background:linear-gradient(90deg,#c9392a,rgba(201,57,42,0.15));margin:18px 0 26px"></div>
+      <figure style="margin:0 0 8px">
+        <div style="background:#e9e4d8;height:220px;display:flex;align-items:center;justify-content:center;background-image:repeating-linear-gradient(-45deg,rgba(38,34,30,0.04) 0,rgba(38,34,30,0.04) 6px,transparent 6px,transparent 14px)">
+          <span style="font-family:monospace;font-size:11px;color:#8a8378">代表・田口の写真</span>
+        </div>
+        <figcaption style="font-size:11px;color:#8a8378;margin-top:8px">ラフ・メイカー株式会社 代表・田口</figcaption>
+      </figure>
+      <p style="font-size:13px;line-height:2.2;margin:18px 0 0;color:#57524b">「営業代行にお金を払ったのに、成果はゼロだった」<br>これまで10,000社超の経営者とお会いするなかで、最も多く聞いた言葉です。</p>
+      <p style="font-size:13px;line-height:2.2;margin:14px 0 0;color:#57524b">問題は商品ではなく、決裁できる相手に届いていないこと。ただそれだけで、同じ商品でも結果は何倍も変わります。だからWは、粗利600万円を保障し、届かない場合は無償で支援を延長する形にしました。</p>
+      <p style="font-size:13px;line-height:2.2;margin:14px 0 0;color:#57524b">ご相談のお時間は決して無駄にしませんので、ご連絡まで少々お待ちください。</p>
+    </section>
+
+    <section style="padding:48px 24px;background:#efebe1;border-top:1px solid rgba(38,34,30,0.08)">
+      <h2 style="font-size:19px;line-height:1.8;margin:0;font-weight:900;letter-spacing:0.02em">こんな課題を抱えていた企業様から<br>特にご好評いただいています</h2>
+      <div style="width:52px;height:2px;background:linear-gradient(90deg,#c9392a,rgba(201,57,42,0.15));margin:18px 0 26px"></div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:12px;align-items:flex-start;background:#faf8f3;border:1px solid rgba(38,34,30,0.10);padding:16px 18px">
+          <span style="flex:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#e0563d,#9c2214);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:3px">✓</span>
+          <span style="font-size:13px;font-weight:700;line-height:1.8">月額を払い続けたのに、成果はゼロだった</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;background:#faf8f3;border:1px solid rgba(38,34,30,0.10);padding:16px 18px">
+          <span style="flex:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#e0563d,#9c2214);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:3px">✓</span>
+          <span style="font-size:13px;font-weight:700;line-height:1.8">商品に自信はあるのに、決裁者に会えない</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;background:#faf8f3;border:1px solid rgba(38,34,30,0.10);padding:16px 18px">
+          <span style="flex:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#e0563d,#9c2214);color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:3px">✓</span>
+          <span style="font-size:13px;font-weight:700;line-height:1.8">届くのは架電数の報告だけで、商談が生まれない</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer style="padding:40px 24px 48px;background:#14110e;color:#a99f8f">
+    <img src="assets/logo-w-white.png" alt="W" style="height:22px;width:auto;display:block">
+    <p style="font-size:11px;margin:10px 0 22px">粗利600万円保障つき営業支援サービス</p>
+    <div style="display:flex;gap:16px;font-size:11px;margin-bottom:16px">
+      <a href="https://laugh-maker.jp/company" target="_blank" rel="noopener" style="color:#8f887b;white-space:nowrap">会社概要</a>
+      <a href="https://drive.google.com/file/d/1aoLPsLe9loWZZIPutqbFUnU6kxRVnT5W/view?usp=sharing" target="_blank" rel="noopener" style="color:#8f887b;white-space:nowrap">プライバシーポリシー</a>
+    </div>
+    <div style="font-size:10px;color:#6d675f">© ラフ・メイカー株式会社</div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
