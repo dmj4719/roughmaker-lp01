@@ -463,8 +463,7 @@ class Component extends DCLogic {
       marqueeTags: tags.concat(tags),
       handleSubmit: (e) => {
         e.preventDefault();
-        if (e.target.checkValidity()) location.href = 'W-Thanks.dc.html';
-        else e.target.reportValidity();
+        sendEmail(e);
       }
     };
   }
