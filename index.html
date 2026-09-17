@@ -340,7 +340,7 @@ section[id] { scroll-margin-top: 72px; }
         <span style="width:20px;height:2px;background:linear-gradient(90deg,#28968d,rgba(5,152,141,0));flex:none"></span>
         <span style="font-size:11.5px;font-weight:900;letter-spacing:0.2em;color:#1d7a72">資料ダウンロードフォーム</span>
       </div>
-      <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:20px">
+      <form id="contactForm" onsubmit="return sendEmail(event)" style="display:flex;flex-direction:column;gap:20px">
         <div>
           <label for="f-company" style="display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;margin-bottom:8px;color:#10302b">会社名<span style="background:#1d7a72;color:#fbfefd;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px;flex:none">必須</span></label>
           <input id="f-company" name="company" type="text" required placeholder="例：ラフ・メイカー株式会社" style="width:100%;font:inherit;font-size:16px;padding:14px 16px;border:1px solid rgba(0,0,0,0.16);border-radius:4px;background:#f4fbfa;color:#10302b">
@@ -461,6 +461,27 @@ class Component extends DCLogic {
       }
     };
   }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("q7QRxOXj-OXeOJTYM");
+function sendEmail(e) {
+  e.preventDefault();
+  var form = document.getElementById('contactForm');
+  if (!form.checkValidity()) { form.reportValidity(); return false; }
+  var btn = form.querySelector('button[type=submit]');
+  btn.disabled = true;
+  btn.querySelector('span').textContent = '送信中...';
+  emailjs.sendForm('service_98j3ryo', 'template_yvrduj6', form)
+    .then(function() {
+      location.href = 'thanks.html';
+    }, function(err) {
+      alert('送信に失敗しました。お手数ですが、もう一度お試しください。');
+      btn.disabled = false;
+      btn.querySelector('span').textContent = '無料で資料を受け取る';
+    });
+  return false;
 }
 </script>
 </body>
