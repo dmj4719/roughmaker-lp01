@@ -340,7 +340,7 @@ section[id] { scroll-margin-top: 72px; }
         <span style="width:20px;height:2px;background:linear-gradient(90deg,#28968d,rgba(5,152,141,0));flex:none"></span>
         <span style="font-size:11.5px;font-weight:900;letter-spacing:0.2em;color:#1d7a72">資料ダウンロードフォーム</span>
       </div>
-      <form id="contactForm" onsubmit="return sendEmail(event)" style="display:flex;flex-direction:column;gap:20px">
+      <form id="contactForm" style="display:flex;flex-direction:column;gap:20px">
         <input type="hidden" name="page_url" id="f-page-url">
         <input type="hidden" name="utm_source" id="f-utm-source">
         <input type="hidden" name="utm_medium" id="f-utm-medium">
@@ -463,7 +463,6 @@ class Component extends DCLogic {
       marqueeTags: tags.concat(tags),
       handleSubmit: (e) => {
         e.preventDefault();
-        sendEmail(e);
       }
     };
   }
@@ -481,8 +480,14 @@ emailjs.init("q7QRxOXj-OXeOJTYM");
   document.getElementById('f-utm-content').value = p.get('utm_content') || '';
   document.getElementById('f-utm-term').value = p.get('utm_term') || '';
 })();
+document.addEventListener('DOMContentLoaded', function(){
+  var f = document.getElementById('contactForm');
+  if(f) f.addEventListener('submit', sendEmail, true);
+});
 function sendEmail(e) {
   e.preventDefault();
+  e.preventDefault();
+  e.stopImmediatePropagation();
   var form = document.getElementById('contactForm');
   if (!form.checkValidity()) { form.reportValidity(); return false; }
   document.getElementById('f-sent-at').value = new Date().toLocaleString('ja-JP', {timeZone:'Asia/Tokyo'});
