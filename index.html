@@ -400,7 +400,7 @@ section[id] { scroll-margin-top: 72px; }
         <div style="font-size:12.5px;line-height:1.9;color:#53706c;background:#eff8f6;border:1px solid #cfe4e1;padding:14px 16px">送信いただいた情報は、お問い合わせ対応の目的にのみ使用します。詳しくは<a href="https://drive.google.com/file/d/1aoLPsLe9loWZZIPutqbFUnU6kxRVnT5W/view?usp=sharing" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認ください。</div>
         <div>
           <div style="display:flex;align-items:center;justify-content:center;gap:11px;margin-bottom:10px"><span style="width:2px;height:16px;background:#1d7a72;transform:rotate(-20deg);border-radius:1px;flex:none"></span><span style="font-size:13px;font-weight:900;color:#1d7a72;letter-spacing:0.06em;white-space:nowrap">30秒で入力完了</span><span style="width:2px;height:16px;background:#1d7a72;transform:rotate(20deg);border-radius:1px;flex:none"></span></div>
-          <button type="button" onclick="sendEmail(event)" style="font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#ffffff 0%,#edf7f5 100%);color:#1d7a72;font-weight:900;font-size:17px;padding:19px 14px;border:none;border-radius:9999px;cursor:pointer;line-height:1.5;letter-spacing:0.02em;box-shadow:0 4px 0 #b0d7d1, 0 8px 20px rgba(29,122,114,0.25)" style-hover="filter:brightness(1.1)"><span>無料で資料を受け取る</span><span style="flex:none;width:26px;height:26px;border-radius:50%;background:rgba(29,122,114,0.1);border:1px solid rgba(29,122,114,0.3);display:flex;align-items:center;justify-content:center;font-size:14.5px;line-height:1">&#8594;</span></button>
+          <button type="button" id="emailjs-submit-btn" style="font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(180deg,#ffffff 0%,#edf7f5 100%);color:#1d7a72;font-weight:900;font-size:17px;padding:19px 14px;border:none;border-radius:9999px;cursor:pointer;line-height:1.5;letter-spacing:0.02em;box-shadow:0 4px 0 #b0d7d1, 0 8px 20px rgba(29,122,114,0.25)" style-hover="filter:brightness(1.1)"><span>無料で資料を受け取る</span><span style="flex:none;width:26px;height:26px;border-radius:50%;background:rgba(29,122,114,0.1);border:1px solid rgba(29,122,114,0.3);display:flex;align-items:center;justify-content:center;font-size:14.5px;line-height:1">&#8594;</span></button>
         </div>
       </form>
     </div>
@@ -480,6 +480,10 @@ emailjs.init("q7QRxOXj-OXeOJTYM");
   document.getElementById('f-utm-content').value = p.get('utm_content') || '';
   document.getElementById('f-utm-term').value = p.get('utm_term') || '';
 })();
+document.addEventListener('click', function(ev) {
+  var btn = ev.target.closest('#emailjs-submit-btn');
+  if (btn) sendEmail();
+}, true);
 function sendEmail() {
   var form = document.getElementById('contactForm');
   if (!form.checkValidity()) { form.reportValidity(); return; }
